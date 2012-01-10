@@ -1,6 +1,7 @@
 source "http://rubygems.org"
+gem "nokogiri"
 
 group :development, :test do
   gem "rspec"
-  gem "cucumber"
+  gem "webmock"
 end

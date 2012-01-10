@@ -1,3 +1,7 @@
 Simple web crawler outputting URL, title and status code into CSV file for any given site.
 
-Run 'rake' to run features and specs
+Run 'rake' to run specs
+
+Example usage:
+
+ruby crawler.rb www.google.co.uk
