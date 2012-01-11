@@ -5,10 +5,16 @@ require './lib/page'
 site = ARGV[0].dup
 file = ARGV[1].dup
 
-results = WebCrawler.new(ARGV[0].dup).crawl
-results.each do |result|
-  File.open(local_filename, 'w') {|f| f.write(doc) }  .
+puts "Starting crawl. Be patient :)"
+results = WebCrawler.new(site).crawl
+
+puts "Outputting results to file..."
+File.open(file, 'w') do |f|
+  results.each do |result|
+    f.puts(result)
+  end
 end
+
 
 
 
