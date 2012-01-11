@@ -4,4 +4,4 @@ Run 'rake' to run specs
 
 Example usage:
 
-ruby crawler.rb www.google.co.uk
+ruby crawler.rb www.google.co.uk results.txt
