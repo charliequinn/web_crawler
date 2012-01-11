@@ -15,9 +15,13 @@ describe Page do
     @response = DummyResponse.new(200, "<html><head><title>Hello EmergeAdapt</title></head>
                                         <body><a href=\"www.here.com\"><a href=\"/anywhere\">
                                         <a href=\"\#\" />
+                                        <a href=\"www.here.com/?pies=steak\">
                                         <a href=\"http://www.google.co.uk\" />
                                         </body>")
 
-    Page.index(@url, @response).should eql({:result => "#{@url},Hello EmergeAdapt,200", :crawl_frontier => ["http://www.here.com", "http://www.blah.com/anywhere", "http://www.google.co.uk"]})
+    Page.index(@url, @response).should eql({:result => "#{@url},Hello EmergeAdapt,200", :found_links => ["www.here.com",
+                                                                                                         "/anywhere",
+                                                                                                         "www.here.com/?pies=steak",
+                                                                                                         "http://www.google.co.uk"]})
   end
 end
